@@ -1,11 +1,8 @@
 fn NStep(x: i32, y: i32) -> Result<i32, &'static str> {
-    if x == y || (x - 2) == y
-    {
+    if x == y || (x - 2) == y {
         Ok(x + y - if x % 2 == 0 { 0 } else { 1 })
-    }
-    else
-    {
-        Err("No Number")    
+    } else {
+        Err("No Number")
     }
 }
 
@@ -19,8 +16,7 @@ mod tests {
     use rstest::rstest;
 
     #[test]
-    fn When_NStep__Given_XZeroYZero__Expect_Zero() -> Result<(), String>
-    {
+    fn When_NStep__Given_XZeroYZero__Expect_Zero() -> Result<(), String> {
         assert_eq!(NStep(0, 0)?, 0);
         Ok(())
     }
@@ -42,8 +38,7 @@ mod tests {
         case(7, 5, 11),
         case(6, 6, 12)
     )]
-    fn When_NStep__Given_GoodXY_Expect_Number(x: i32, y: i32, expected: i32) -> Result<(), String>
-    {
+    fn When_NStep__Given_GoodXY_Expect_Number(x: i32, y: i32, expected: i32) -> Result<(), String> {
         assert_eq!(NStep(x, y)?, expected);
         Ok(())
     }
@@ -62,8 +57,7 @@ mod tests {
         case(5, 0),
         case(6, 0)
     )]
-    fn When_NStep__Given_BadXY_Expect_NoNumber(x: i32, y: i32) -> Result<(), String>
-    {
+    fn When_NStep__Given_BadXY_Expect_NoNumber(x: i32, y: i32) -> Result<(), String> {
         assert_eq!(NStep(x, y), Err("No Number"));
         Ok(())
     }

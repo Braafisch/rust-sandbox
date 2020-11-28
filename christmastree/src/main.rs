@@ -1,11 +1,11 @@
 use clap::{App, Arg};
 
-struct ChristmasTree{
+struct ChristmasTree {
     height: u32,
     has_star: bool,
 }
 
-impl ChristmasTree{
+impl ChristmasTree {
     fn draw(&self) {
         if self.has_star {
             self.draw_star();
@@ -28,7 +28,7 @@ impl ChristmasTree{
     fn draw_trunk(&self) {
         self.output("I")
     }
-    
+
     fn output(&self, a: &str) {
         println!("{}", format!("{: ^1$}", a, self.width() as usize));
     }

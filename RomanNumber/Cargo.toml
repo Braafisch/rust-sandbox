@@ -1,5 +1,5 @@
 [package]
-name = "NStep"
+name = "RomanNumber"
 version = "0.1.0"
 authors = ["Bradfisch <wobrit00@hs-esslingen.de>"]
 edition = "2018"
